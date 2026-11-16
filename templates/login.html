@@ -1,0 +1,174 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NovaTech Solutions | Login</title>
+
+<style>
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #092747, #1769bb);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.login-card {
+    background: white;
+    width: 100%;
+    max-width: 410px;
+    padding: 35px 28px;
+    border-radius: 15px;
+    box-shadow: 0 12px 40px rgba(0,0,0,.2);
+}
+
+.logo {
+    text-align: center;
+    margin-bottom: 28px;
+}
+
+.logo h1 {
+    color: #123d70;
+    font-size: 27px;
+}
+
+.logo p {
+    color: #718096;
+    font-size: 13px;
+    margin-top: 9px;
+}
+
+h2 {
+    color: #253247;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    text-align: center;
+    color: #718096;
+    font-size: 14px;
+    margin-bottom: 25px;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    color: #253d5b;
+    margin: 17px 0 8px;
+}
+
+input {
+    width: 100%;
+    padding: 14px;
+    border: 1px solid #cbd4df;
+    border-radius: 7px;
+    font-size: 15px;
+}
+
+input:focus {
+    outline: none;
+    border-color: #1769bb;
+}
+
+.login-button {
+    width: 100%;
+    padding: 15px;
+    background: #1769bb;
+    color: white;
+    border: none;
+    border-radius: 7px;
+    font-size: 16px;
+    font-weight: bold;
+    margin-top: 25px;
+    cursor: pointer;
+}
+
+.login-button:hover {
+    background: #123d70;
+}
+
+.error {
+    background: #fff0f0;
+    color: #b42318;
+    padding: 12px;
+    border-radius: 7px;
+    font-size: 13px;
+    margin-top: 15px;
+    text-align: center;
+}
+
+footer {
+    text-align: center;
+    color: #9aa6b5;
+    font-size: 12px;
+    margin-top: 25px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="login-card">
+
+    <div class="logo">
+        <h1>NovaTech Solutions</h1>
+        <p>Innovation • Quality • Customer Satisfaction</p>
+    </div>
+
+    <h2>Welcome Back</h2>
+    <p class="subtitle">Please log in to continue.</p>
+
+    <form method="POST" action="{{ url_for('login') }}">
+
+        <label for="username">Username</label>
+        <input
+            type="text"
+            id="username"
+            name="username"
+            placeholder="Enter your username"
+            autocomplete="username"
+            required
+        >
+
+        <label for="password">Password</label>
+        <input
+            type="password"
+            id="password"
+            name="password"
+            placeholder="Enter your password"
+            autocomplete="current-password"
+            required
+        >
+
+        {% if error %}
+        <div class="error">
+            {{ error }}
+        </div>
+        {% endif %}
+
+        <button type="submit" class="login-button">
+            LOGIN
+        </button>
+
+    </form>
+
+    <footer>
+        © 2026 NovaTech Solutions
+    </footer>
+
+</div>
+
+</body>
+  </html>
+  
